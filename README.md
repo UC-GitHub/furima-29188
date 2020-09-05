@@ -3,17 +3,17 @@
 
 ## users テーブル
 
-| Column                | Type    | Options     |
-| --------------------- | ------- | ----------- |
-| nickname              | string  | null: false |
-| email                 | string  | null: false |
-| password              | integer | null: false |
-| password_confirmation | integer | null: false |
-| family_name           | string  | null: false |
-| first_name            | string  | null: false |
-| kana_family_name      | string  | null: false |
-| kana_first_name       | string  | null: false |
-| bithday (Active Hush) | integer | null: false |
+| Column                   | Type    | Options     |
+| ------------------------ | ------- | ----------- |
+| nickname                 | string  | null: false |
+| email                    | string  | null: false |
+| password                 | integer | null: false |
+| password_confirmation    | integer | null: false |
+| family_name              | string  | null: false |
+| first_name               | string  | null: false |
+| kana_family_name         | string  | null: false |
+| kana_first_name          | string  | null: false |
+| bithday_id (Active Hush) | integer | null: false |
 
 ### Association
 
