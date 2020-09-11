@@ -6,7 +6,7 @@ window.addEventListener("load", calculation);
     let profit = document.getElementById("profit");
       item_price.addEventListener("input", () => {
         const price = document.getElementById("item-price").value;
-          margin.innerHTML = Math.floor(price * 0.1);
-          profit.innerHTML = (price - margin.innerHTML);
+        margin.innerHTML = Math.floor(price * 0.1);
+        profit.innerHTML = (price - margin.innerHTML);
   });
   }
