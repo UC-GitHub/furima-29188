@@ -8,10 +8,10 @@ const pay = () => {
     const formData = new FormData(formResult);
  
     const card = {
-      number: formData.get("number"),
-      cvc: formData.get("cvc"),
-      exp_month: formData.get("exp_month"),
-      exp_year: `20${formData.get("exp_year")}`,
+      number: formData.get("order_shipping_address[number]"),
+      cvc: formData.get("order_shipping_address[cvc]"),
+      exp_month: formData.get("order_shipping_address[exp_month]"),
+      exp_year: `20${formData.get("order_shipping_address[exp_year]")}`,
     };
     // console.log(card)検証用
     // formData.getはnameを指定して取得している
