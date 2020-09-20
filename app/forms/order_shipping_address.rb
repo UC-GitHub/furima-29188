@@ -4,9 +4,10 @@ class OrderShippingAddress
   attr_accessor :user_id, :item_id, :postal_code, :shipping_from_id, :city, :street_address, :building, :phone_number, :token
 
   with_options presence: true do
+    validates :token
     validates :user_id
     validates :item_id
-    validates :postal_code, format: { with: /\A\d{3}[-]\d{4}\z/, message: "is invalid. Input Half-width numbers."}
+    validates :postal_code, format: { with: /\A\d{3}[-]\d{4}\z/, message: "invalid: Input Half-width numbers with hyphen"}
     validates :city 
     validates :street_address
     validates :phone_number, length: { maximum: 11 } 
