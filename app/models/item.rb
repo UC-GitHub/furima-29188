@@ -13,7 +13,7 @@ class Item < ApplicationRecord
   validates :shipping_from_id, numericality: { other_than: 0, message: 'must be Selected' }
   validates :price, numericality: {only_integer: true, greater_than_or_equal_to: 300, less_than_or_equal_to: 9999999, message: 'Out of setting range' }, format: { with: VALID_PRICE_REGEX, message: 'Half-width number' }
 
-  has_one :purchase
+  has_one :order
   belongs_to :user
   has_one_attached :image
 
