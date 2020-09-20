@@ -9,7 +9,7 @@ RSpec.describe OrderShippingAddress, type: :model do
 
   describe '商品購入' do
     context '購入が上手くいくとき' do
-      it "token, postal_code, shipping_from_id, city, street_adress, phone_number, item_id, user_idがあれば購入できる" do
+      it "token, postal_code, shipping_from_id, city, street_adress, phone_number, item_id, user_idがあり、buildingは空でも購入できる" do
         expect(@order_shipping_address).to be_valid
       end
     end
@@ -48,10 +48,10 @@ RSpec.describe OrderShippingAddress, type: :model do
         @order_shipping_address.valid?
         expect(@order_shipping_address.errors.full_messages).to include("Street address can't be blank")
       end
-      it "phone_numberが空だと登録できない" do
-        @order_shipping_address.phone_number = ''
+      it "phone_numberが１２桁以上だと登録できない" do
+        @order_shipping_address.phone_number = '123456789123'
         @order_shipping_address.valid?
-        expect(@order_shipping_address.errors.full_messages).to include("Phone number can't be blank")
+        expect(@order_shipping_address.errors.full_messages).to include("Phone number is too long (maximum is 11 characters)")  
       end
     end
   end

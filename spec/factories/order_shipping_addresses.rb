@@ -5,6 +5,7 @@ FactoryBot.define do
     shipping_from_id { 1 }
     city             { '大阪市淀川区'}
     street_address   { '東三国1−1-2' }
+    building         { '' }
     phone_number     { 061234567 }
     user_id          { 1 }
     item_id          { 1 }
