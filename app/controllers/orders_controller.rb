@@ -1,7 +1,8 @@
 class OrdersController < ApplicationController
-  before_action :set_item, only: [:index, :create, :pay_item]
+  before_action :set_item
   before_action :authenticate_user!, only: [:index]
-  
+  before_action :sold_out
+
   def index
     @order = OrderShippingAddress.new
   end
@@ -34,4 +35,11 @@ class OrdersController < ApplicationController
   def set_item
     @item = Item.find(params[:item_id])
   end
+
+  def sold_out
+    if @item.order != nil
+      redirect_to root_path
+    end
+  end
+
 end
