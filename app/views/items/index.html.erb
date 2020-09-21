@@ -153,7 +153,7 @@
 
       <%# //商品がある場合は表示されないようにしましょう %>
       <%# /商品がない場合のダミー %>
-      <% if @item.nil? %>
+      <% unless @item.exists? %>
         <li class='list'>
           <%= link_to "#" do %>
           <div class='item-img-content'>
